@@ -7,9 +7,9 @@
 </head>
 <body>
     <nav>
-        <a href="">Home</a>
-        <a href="">Login</a>
-        <a href="">Signup</a>
+        <a href="{{route('home')}}">Home</a>
+        <a href="{{route('login')}}">Login</a>
+        <a href="{{route('register')}}">Signup</a>
     </nav>
 </body>
 </html>
