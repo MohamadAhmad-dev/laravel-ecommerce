@@ -9,3 +9,4 @@ Route::get('/register',[AuthController::class,'registerPage'])->name('register')
 Route::get('/login',[AuthController::class,'loginPage'])->name('login');
 Route::post('/register',[AuthController::class,'register'])->name('register.actions');
 Route::post('/login',[AuthController::class,'login'])->name('login.actions');
+Route::post('/logout',[AuthController::class,'logout'])->name('logout');

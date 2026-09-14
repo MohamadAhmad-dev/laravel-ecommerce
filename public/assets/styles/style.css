@@ -34,6 +34,28 @@ nav img{
     height: 70px;
 }
 
+#linkForm{
+    display: flex;
+    align-items: center;
+}
+
+#linkForm button{
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    padding: 10px;
+    transition: 0.5s;
+    margin: 10px;
+}
+
+#linkForm button:hover{
+    background-color: red;
+    border-radius: 10px;
+}
+
+#linkForm form {
+    margin: 0;
+}
 footer{
     margin-top: auto;
     display: flex;

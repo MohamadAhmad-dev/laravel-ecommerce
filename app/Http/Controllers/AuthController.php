@@ -45,4 +45,11 @@ class AuthController extends Controller
         ->withErrors(['error'=>'Wrong email or password!'])
         ->withInput($request->only('email'));
     }
+
+    function logout(Request $request){
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+        return redirect('/');
+    }
 }
