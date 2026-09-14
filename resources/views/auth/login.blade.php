@@ -1,27 +1,33 @@
 <x-layout title='Login'>
 
-<h1>Login Form</h1>
+<form class="loginSignupForm" action="{{ route('login') }}" method="POST">
 
-<form action="{{ route('login') }}" method="POST">
+ 
+    <h1>Login Form</h1>
 
-<label for="email">Email</label>
-<input type="email" name="email" value="{{old('email')}}">
-@error('email')
-    <p style="color: red;">{{$message}}</p>
-@enderror
+    <div>
+        <label for="email">Email</label>
+        <input type="email" name="email" value="{{old('email')}}">
+        @error('email')
+            <p style="color: red;">{{$message}}</p>
+        @enderror
+    </div>
 
-<label for="password">Password</label>
-<input type="password" name="password">
-@error('password')
-    <p style="color: red;">{{$message}}</p>
-@enderror
+    <div>
+        <label for="password">Password</label>
+        <input type="password" name="password">
+        @error('password')
+            <p style="color: red;">{{$message}}</p>
+        @enderror
 
-@error('error')
-    <p style="color: red;">{{ $message }}</p>
-@enderror
+        @error('error')
+            <p style="color: red;">{{ $message }}</p>
+        @enderror
+    </div>
 
-<button type="submit">Login</button>
 
+    <button type="submit">Login</button>
+    
 </form>
 
 </x-layout>
