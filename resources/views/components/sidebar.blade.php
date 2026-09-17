@@ -15,14 +15,14 @@
             <img src="{{asset('assets/images/admin.png')}}">
             <div>
                 <h2>OVERVIEW</h2>
-                <a href="">Admin Dashboard</a>
+                <a href="{{route('admin.home')}}">Admin Dashboard</a>
             </div>
 
             <div>
                 <h2>USERS</h2>
-                <a href="">All Users</a>
-                <a href="">Deleted Users</a>
-                <a href="">Active Users</a>
+                <a href="{{route('users.all')}}">All Users</a>
+                <a href="{{route('users.deleted')}}">Deleted Users</a>
+                <a href="{{route('users.active')}}">Active Users</a>
             </div>
 
             <div>
@@ -34,7 +34,7 @@
 
         </section>
 
-        <section>
+        <section id="sidebarSlot">
             {{$slot}}
         </section>
 </main>

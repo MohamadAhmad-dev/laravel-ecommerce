@@ -12,3 +12,13 @@ Route::post('/register',[AuthController::class,'register'])->name('register.acti
 Route::post('/login',[AuthController::class,'login'])->name('login.actions');
 Route::post('/logout',[AuthController::class,'logout'])->name('logout');
 Route::get('/admin/home',[AdminController::class,'home'])->name('admin.home');
+Route::get('/admin/users/all',[AdminController::class,'allUsers'])->name('users.all');
+Route::get('/admin/users/active',[AdminController::class,'activeUsers'])->name('users.active');
+Route::get('/admin/users/deleted',[AdminController::class,'deletedUsers'])->name('users.deleted');
+
+Route::post('/admin/users/{id}/deleted',[AdminController::class,'deleteUser'])->name('user.delete');
+Route::post('/admin/users/{id}/restore',[AdminController::class,'restoreUser'])->name('user.restore');
+Route::post('/admin/users/{id}/forceDelete',[AdminController::class,'forceDeleteUser'])->name('user.forceDelete');
+Route::post('/admin/users/{id}/toggle',[AdminController::class,'toggleUser'])->name('user.toggle');
+
+
