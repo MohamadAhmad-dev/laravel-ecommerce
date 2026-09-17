@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MainController;
 use Illuminate\Support\Facades\Route;
@@ -10,3 +11,4 @@ Route::get('/login',[AuthController::class,'loginPage'])->name('login');
 Route::post('/register',[AuthController::class,'register'])->name('register.actions');
 Route::post('/login',[AuthController::class,'login'])->name('login.actions');
 Route::post('/logout',[AuthController::class,'logout'])->name('logout');
+Route::get('/admin/home',[AdminController::class,'home'])->name('admin.home');
