@@ -15,8 +15,8 @@
                 <td>{{$user->id}}</td>
                 <td>{{$user->name}}</td>
                 <td>{{$user->email}}</td>
-                <td>User</td>
-                <td>Active</td>
+                <td>{{$user->role}}</td>
+                <td>{{$user->id==Auth::id()?'Active':'Inactive'}}</td>
                 <td class="tdForms">
 
                     <form method="POST" action="{{route('user.toggle' , $user->id)}}">

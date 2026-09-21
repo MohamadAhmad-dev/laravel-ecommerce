@@ -25,8 +25,7 @@ class AdminController extends Controller
         return view('users.deletedUsers',compact('users'));
     }
 
-    function deleteUser($id){
-        $user = User::findOrFail($id);
+    function deleteUser(User $user){
         $user->delete();
         return redirect()->back();
     }
@@ -43,8 +42,7 @@ class AdminController extends Controller
         return redirect()->back();
     }
 
-    function toggleUser($id){
-        $user =  User::findOrFail($id);
+    function toggleUser(User $user){
         if($user->role=='user'){
             $user->role='admin';
         }

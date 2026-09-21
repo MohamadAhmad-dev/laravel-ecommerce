@@ -32,6 +32,11 @@
                 <a href="">Tag Management</a>
             </div>
 
+            <div>
+                <a href="{{route('home')}}">
+                    <img src="{{asset('assets/images/backToHomePage.png')}}" alt="">
+                </a>
+            </div>
         </section>
 
         <section id="sidebarSlot">
