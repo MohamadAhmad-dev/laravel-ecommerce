@@ -1,6 +1,6 @@
 <x-sidebar>
     <h1>All Users</h1>
-    <table class="usersTable">
+    <table class="adminTables">
         <tr>
             <th>#</th>
             <th>Name</th>

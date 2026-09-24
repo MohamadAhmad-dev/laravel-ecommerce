@@ -113,6 +113,8 @@ footer{
     justify-content: space-around;
     margin-bottom: 10px;
 }
+
+
 .productDiv img{
     width: 100%;
   height: 100%;
@@ -173,6 +175,10 @@ footer{
     width: 13vw;
     border-right: 1px solid grey;
     margin-right: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+
 }
 
 #dashboardSidebar div{
@@ -207,30 +213,34 @@ footer{
 #dashboardMain{
     width: 100%;
     display: flex;
-    height: 100%;
+    min-height: 100vh;
 }
 
 #sidebarSlot{
    width: 85vw;
+   margin-left: 14vw;
 }
-.usersTable{
+.adminTables{
     width: 100%;
     text-align: center;
     border-collapse: collapse;
 }
 
-.usersTable td{
-    height: 50px;
+.adminTables td{
+    height: 100px;
 }
-.usersTable th{
+.adminTables th{
     border-top: 1px solid lightgray;
     height: 30px;
 }
 
-.usersTable tr:nth-child(even){
+.adminTables tr:nth-child(even){
     background-color: lightgray;
 }
 
+.adminTables img{
+    width: 150px;
+}
 .tdForms{
     display: flex;
     justify-content: center;
@@ -246,4 +256,132 @@ footer{
 .tdForms button{
     width: 50px;
     height: 40px;
+}
+
+.productsMain{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.productsMain img{
+    width: 300px;
+}
+.productsMain div{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.productsInputs{
+    height: 50px;
+    border-radius: 10px;
+    border: 1px solid grey;
+}
+
+#isFeatured{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#isFeatured input{
+    width: 20px;
+    height: 20px;
+}
+
+.productsButton{
+    width: 200px;
+    height: 50px;
+    background-color: rgb(65, 65, 255);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+
+.productsButton:hover{
+    background-color: rgb(50, 50, 198);
+}
+
+.porudctImagesSection{
+    width: 400px;
+    height: 300px;
+    display: flex;
+   flex-direction: column;
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.porudctImagesSection img{
+   height: 100%;
+   width: 100%;
+   object-fit: fill;
+   border-radius: 10px;
+}
+
+
+#porudctImagesMain{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+.productImage{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 250px;
+}
+
+.productImageIdButton{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.productImageIdButton button{
+    width: 100px;
+    height: 35px;
+    background-color: white;
+    color: red;
+    border: 1px solid red;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+
+.productImageIdButton button:hover{
+    background-color: rgb(172, 28, 28);
+    color: white;
+}
+.productImageIdButton form{
+  margin: 0px;
+}
+
+.formDiv{
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px black;
+    margin-bottom: 20px;
+}
+
+.formDiv button{
+    margin-top: 20px;
+}
+
+.goBackButtons{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.goBackButtons img{
+    width: 80px;
+    border-radius: 100%;
 }
