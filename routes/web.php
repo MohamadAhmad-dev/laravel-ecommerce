@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\TagController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/',[MainController::class,'home'])->name('home');
@@ -33,9 +34,16 @@ Route::middleware(['auth','admin'])->group(function(){
     Route::post('/admin/products/{product}/delete',[ProductController::class,'deleteProduct'])->name('product.delete');
     Route::get('/admin/products/{product}/edit', [ProductController::class, 'editProduct'])->name('product.edit');
     Route::post('/admin/products/{product}/edit', [ProductController::class, 'updateProduct'])->name('product.update');
+
     Route::get('/admin/products/{product}/images', [ProductController::class, 'productImages'])->name('product.images');
     Route::post('/admin/products/{product}/images',[ProductController::class,'addImage'])->name('product.images.add');
     Route::post('/admin/products/images/{image}/delete', [ProductController::class, 'deleteImage'])->name('product.image.delete');
+
+    Route::get("/admin/tags",[TagController::class,'tags'])->name('tags');
+    Route::post('/admin/tags',[TagController::class,'addTag'])->name('tags.add');
+    Route::get("/admin/tags/{tag}/edit",[TagController::class,'editTag'])->name('tags.edit');
+    Route::post('/admin/tag/{tag}/edit',[TagController::class,'updateTag'])->name('tags.update');
+    Route::post('/admin/tag/{tag}/delete',[TagController::class,'deleteTag'])->name('tags.delete');
     });
 
 

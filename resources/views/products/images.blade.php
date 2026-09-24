@@ -14,7 +14,7 @@
             <main class="productsMain">
                 <div>
                     <label for="image">Select image</label>
-                    <input class="productsInputs" type="file" name="image" required>
+                    <input type="file" name="image" required>
                 </div>
             </main>
             <button class="productsButton" type="submit">Upload Image</button>

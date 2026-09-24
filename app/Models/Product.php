@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use App\Models\ProductImages;
+use App\Models\Tag;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
@@ -26,5 +28,9 @@ class Product extends Model
 
     public function images(){
         return $this->hasMany(ProductImages::class);
+    }
+
+    public function tags(){
+        return $this->belongsToMany(Tag::class);
     }
 }

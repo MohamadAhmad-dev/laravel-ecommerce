@@ -31,7 +31,7 @@
             
             <div>
                 <label for="image">Image</label>
-                <input class="productsInputs" type="file" name="image" required>
+                <input type="file" name="image" required>
             </div>
 
             </main>
@@ -65,7 +65,7 @@
                     <img src="{{asset('assets/images/' . $product->image) }}" alt="{{ $product->name }}">
                 </td>
                 <td>{{$product->description}}</td>
-                <td>{{$product->is_featured?'Yes' : 'No'}}</td>\
+                <td>{{$product->is_featured?'Yes' : 'No'}}</td>
                 <td class="tdForms">
                     <form method="GET" action="{{route('product.images', $product)}}">
                         <button type="submit">🖼️</button>

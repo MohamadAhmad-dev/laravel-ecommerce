@@ -295,6 +295,7 @@ footer{
 .productsButton{
     width: 200px;
     height: 50px;
+    margin-top: 20px;
     background-color: rgb(65, 65, 255);
     color: white;
     border: none;
