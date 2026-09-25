@@ -222,12 +222,15 @@ footer{
 }
 .adminTables{
     width: 100%;
+    table-layout: fixed;
     text-align: center;
     border-collapse: collapse;
 }
 
 .adminTables td{
     height: 100px;
+    overflow-wrap: break-word;
+    word-break: break-word;
 }
 .adminTables th{
     border-top: 1px solid lightgray;
@@ -243,6 +246,7 @@ footer{
 }
 .tdForms{
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 10px;
 }

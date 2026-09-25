@@ -75,6 +75,10 @@
                         <button type="submit">✏️</button>
                     </form>
                     
+                    <form method="GET" action="{{route('product.tags', $product)}}">
+                        <button type="submit">🏷️</button>
+                    </form>
+                    
                     <form method="POST" action="{{route('product.delete', $product)}}">
                         <button type="submit">🗑️</button>
                     </form>

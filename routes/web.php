@@ -44,6 +44,11 @@ Route::middleware(['auth','admin'])->group(function(){
     Route::get("/admin/tags/{tag}/edit",[TagController::class,'editTag'])->name('tags.edit');
     Route::post('/admin/tag/{tag}/edit',[TagController::class,'updateTag'])->name('tags.update');
     Route::post('/admin/tag/{tag}/delete',[TagController::class,'deleteTag'])->name('tags.delete');
+
+    Route::get('/admin/products/{product}/tags', [TagController::class, 'productTagsPage'])->name('product.tags');
+    Route::post('/admin/products/{product}/tags', [TagController::class, 'addProductTag'])->name('product.tags.add');
+    Route::post('/admin/products/{product}/tags/{tag}', [TagController::class, 'deleteProductTag'])->name('product.tags.delete');
+
     });
 
 
