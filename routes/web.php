@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\SlideController;
 use App\Http\Controllers\TagController;
 use Illuminate\Support\Facades\Route;
 
@@ -49,6 +50,12 @@ Route::middleware(['auth','admin'])->group(function(){
     Route::post('/admin/products/{product}/tags', [TagController::class, 'addProductTag'])->name('product.tags.add');
     Route::post('/admin/products/{product}/tags/{tag}', [TagController::class, 'deleteProductTag'])->name('product.tags.delete');
 
+    Route::get('/admin/slides', [SlideController::class, 'slides'])->name('slides');
+    Route::post('/admin/slides', [SlideController::class, 'addSlide'])->name('slides.add');
+    Route::get('/admin/slides/{slide}/edit', [SlideController::class, 'editSlide'])->name('slides.edit');
+    Route::post('/admin/slides/{slide}/update', [SlideController::class, 'updateSlide'])->name('slides.update');
+    Route::post('/admin/slides/{slide}/delete', [SlideController::class, 'deleteSlide'])->name('slides.delete');
+    
     });
 
 
