@@ -19,7 +19,7 @@
             <th>Actions</th>
         </tr>
 
-        @foreach ($tags as $tag)
+        @forelse ($tags as $tag)
             <tr>
                 <td>{{$tag->id}}</td>
                 <td>{{$tag->name}}</td>
@@ -34,7 +34,12 @@
                     </form>
                 </td>
             </tr>
-        @endforeach
+
+            @empty
+            <tr>
+                <td colspan="3">No tags available!</td>
+            </tr>
+        @endforelse
         
     </table>
     

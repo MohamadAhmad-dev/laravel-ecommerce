@@ -1,11 +1,6 @@
 <x-sidebar>
 
-    <div class="goBackButtons">
-        <h1>Edit {{$product->name}}</h1>
-        <a href="{{route('products')}}">
-            <img src="{{asset('assets/images/back.jpg')}}" alt="">
-        </a>
-    </div>
+    <x-go-back :title=" 'Edit ' . $product->name" route="products"/>
 
     <form method="POST" action="{{route('product.update', $product)}}" enctype="multipart/form-data">
 

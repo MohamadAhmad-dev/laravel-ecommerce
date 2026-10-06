@@ -1,10 +1,6 @@
 <x-sidebar>
-    <div class="goBackButtons">
-        <h1>Edit Tag</h1>
-        <a href="{{route('tags')}}">
-            <img src="{{asset('assets/images/back.jpg')}}" alt="">
-        </a>
-    </div>
+    
+    <x-go-back title="Edit Tag" route="tags"/>
 
     <form method="POST" action="{{route('tags.update',$tag)}}">
         <main class="productsMain">

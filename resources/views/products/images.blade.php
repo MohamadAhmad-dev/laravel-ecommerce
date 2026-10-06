@@ -1,11 +1,6 @@
 <x-sidebar>
 
-    <div class="goBackButtons">
-        <h1>Images for {{$product->name}}</h1>
-        <a href="{{route('products')}}">
-            <img src="{{asset('assets/images/back.jpg')}}" alt="">
-        </a>
-    </div>
+    <x-go-back :title=" 'Images for ' . $product->name" route="products"/>
 
     <div class="formDiv">
         <h3>Add New Image</h3>

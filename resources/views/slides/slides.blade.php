@@ -31,7 +31,7 @@
             <th>Actions</th>
         </tr>
 
-        @foreach ($slides as $slide)
+        @forelse ($slides as $slide)
             <tr>
                 <td>{{$slide->id}}</td>
                 <td>{{$slide->title}}</td>
@@ -50,7 +50,12 @@
                     </form>
                 </td>
             </tr>
-        @endforeach
+
+            @empty
+            <tr>
+                <td colspan="5">No slides available!</td>
+            </tr>
+        @endforelse
         
     </table>
 </x-sidebar>

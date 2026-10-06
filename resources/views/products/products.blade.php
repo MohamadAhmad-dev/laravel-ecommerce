@@ -55,7 +55,7 @@
             <th>Action</th>
         </tr>
 
-        @foreach ($products as $product)
+        @forelse ($products as $product)
             <tr>
                 <td>{{$product->id}}</td>
                 <td>{{$product->name}}</td>
@@ -84,7 +84,12 @@
                     </form>
                 </td>
             </tr>
-        @endforeach
+
+            @empty
+            <tr>
+                <td colspan="8">No products available!</td>
+            </tr>
+        @endforelse
         
     </table>
 </x-sidebar>

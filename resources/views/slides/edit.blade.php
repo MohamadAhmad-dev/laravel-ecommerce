@@ -1,10 +1,5 @@
 <x-sidebar>
-    <div class="goBackButtons">
-        <h1>Edit Slide</h1>
-        <a href="{{route('slides')}}">
-            <img src="{{asset('assets/images/back.jpg')}}" alt="">
-        </a>
-    </div>
+    <x-go-back title="Edit Slide" route="slides"/>
 
     <form method="POST" action="{{route('slides.update',$slide)}}" enctype="multipart/form-data">
         <main class="productsMain">

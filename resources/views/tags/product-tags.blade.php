@@ -1,11 +1,6 @@
 <x-sidebar>
 
-    <div class="goBackButtons">
-        <h1>Tags for "{{$product->name}}"</h1>
-        <a href="{{route('products')}}">
-            <img src="{{asset('assets/images/back.jpg')}}" alt="">
-        </a>
-    </div>
+    <x-go-back :title="'Tags for ' . $product->name" route="products"/>
 
     <h3>Current Tags</h3>
     <table class="adminTables">
