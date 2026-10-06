@@ -40,6 +40,18 @@
                 <input type="file" name="image">
             </div>
 
+            <div>
+                <label for="category_id">Category</label>
+
+                <select class="productsInputs" name="category_id" required>
+
+                    @foreach ($categories as $category)
+                        <option value="{{ $category->id }}" @selected($category->id == $product->category_id)>{{ $category->name }}</option>
+                    @endforeach
+
+                </select>
+            </div>
+
             </main>
 
             <div id="isFeatured">

@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Category;
 use App\Models\ProductImages;
 use App\Models\Tag;
 use Illuminate\Database\Eloquent\Model;
@@ -19,6 +20,7 @@ class Product extends Model
         'quantity',
         'image',
         'is_featured',
+        'category_id',
     ];
 
     protected $casts = [
@@ -32,5 +34,9 @@ class Product extends Model
 
     public function tags(){
         return $this->belongsToMany(Tag::class);
+    }
+
+    public function category(){
+        return $this->belongsTo(Category::class);
     }
 }

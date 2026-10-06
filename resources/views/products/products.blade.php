@@ -34,6 +34,17 @@
                 <input type="file" name="image" required>
             </div>
 
+            <div>
+                <label for="category_id">Category</label>
+                <select class="productsInputs" name="category_id" required>
+                    <option value="">Select a category</option>
+
+                    @foreach ($categories as $category)
+                        <option value="{{$category->id}}">{{$category->name}}</option>
+                    @endforeach
+                </select>
+            </div>
+
             </main>
 
             <div id="isFeatured">
@@ -51,6 +62,7 @@
             <th>Quantity</th>
             <th>Image</th>
             <th>Description</th>
+            <th>Category</th>
             <th>Featured</th>
             <th>Action</th>
         </tr>
@@ -65,6 +77,7 @@
                     <img src="{{asset('assets/images/' . $product->image) }}" alt="{{ $product->name }}">
                 </td>
                 <td>{{$product->description}}</td>
+                <td>{{ $product->category?->name }}</td>
                 <td>{{$product->is_featured?'Yes' : 'No'}}</td>
                 <td class="tdForms">
                     <form method="GET" action="{{route('product.images', $product)}}">

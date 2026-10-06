@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Product;
 use App\Models\ProductImages;
 use Illuminate\Http\Request;
@@ -10,8 +11,9 @@ class ProductController extends Controller
 {
     function products(){
         $products = Product::all();
+        $categories = Category::all();
 
-        return view('products.products',compact('products'));
+        return view('products.products',compact('products', 'categories'));
     }
 
     function addProduct(Request $request){
@@ -22,6 +24,7 @@ class ProductController extends Controller
             'price' => ['required','numeric','min:0'],
             'quantity' => ['nullable','integer','min:0'],
             'image' => ['required','image','mimes:jpeg,png,jpg,webp','max:4000'],
+            'category_id' => ['required','integer','exists:categories,id'],
             'is_featured' => ['nullable','boolean'],
         ]);
 
@@ -41,7 +44,9 @@ class ProductController extends Controller
     }
 
     function editProduct(Product $product){
-        return view('products.edit', compact('product'));
+        $categories = Category::all();
+
+        return view('products.edit', compact('product','categories'));
     }
     
     function updateProduct(Request $request, Product $product){
@@ -52,6 +57,7 @@ class ProductController extends Controller
             'price' => ['required','numeric','min:0'],
             'quantity' => ['nullable','integer','min:0'],
             'image' => ['nullable','image','mimes:jpeg,png,jpg,webp','max:4000'],
+            'category_id' => ['required', 'integer', 'exists:categories,id'],
             'is_featured' => ['nullable','boolean'],
         ]);
 

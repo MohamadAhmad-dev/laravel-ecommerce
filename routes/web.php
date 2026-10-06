@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\SlideController;
@@ -56,7 +57,12 @@ Route::middleware(['auth','admin'])->group(function(){
     Route::post('/admin/slides/{slide}/update', [SlideController::class, 'updateSlide'])->name('slides.update');
     Route::post('/admin/slides/{slide}/delete', [SlideController::class, 'deleteSlide'])->name('slides.delete');
     
-    });
+    Route::get('/admin/categories', [CategoryController::class, 'categories'])->name('categories');
+    Route::post('/admin/categories', [CategoryController::class, 'addCategory'])->name('categories.add');
+    Route::get('/admin/categories/{category}/edit', [CategoryController::class, 'editCategory'])->name('categories.edit');
+    Route::post('/admin/categories/{category}/update', [CategoryController::class, 'updateCategory'])->name('categories.update');
+    Route::post('/admin/categories/{category}/delete', [CategoryController::class, 'deleteCategory'])->name('categories.delete');
+});
 
 
 

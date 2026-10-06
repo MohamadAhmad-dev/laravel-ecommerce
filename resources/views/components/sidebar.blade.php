@@ -27,9 +27,10 @@
 
             <div>
                 <h2>STORE</h2>
-                <a href="{{route('slides')}}">Slider Management</a>
                 <a href="{{route('products')}}">Products Management</a>
+                <a href="{{route('categories')}}">Categories</a>
                 <a href="{{route('tags')}}">Tag Management</a>
+                <a href="{{route('slides')}}">Slider Management</a>
             </div>
 
             <div>
